@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+    <defName>Gun_Pippy47T</defName>
+    <statBases>
+      <Mass>2.3</Mass>
+      <RangedWeapon_Cooldown>0.9</RangedWeapon_Cooldown>
+      <SightsEfficiency>1.0</SightsEfficiency>
+      <ShotSpread>0.12</ShotSpread>
+      <SwayFactor>1.50</SwayFactor>
+      <Bulk>1.0</Bulk>
+    </statBases>
+    <Properties>
+		<recoilAmount>0.30</recoilAmount>
+      <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Bullet_Pippy47T</defaultProjectile>
+      <warmupTime>1.0</warmupTime>
+      <range>20</range>
+      <soundCast>ShotChargeRifle</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>9</muzzleFlashScale>
+	  <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+        <burstShotCount>4</burstShotCount>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+    </Properties>
+    <AmmoUser>
+      <magazineSize>28</magazineSize>
+      <reloadTime>3.75</reloadTime>
+      <ammoSet>AmmoSet_Pippy47T</ammoSet>
+    </AmmoUser>
+    <FireModes>
+      <aiUseBurstMode>TRUE</aiUseBurstMode>
+    </FireModes>
+    <weaponTags>
+      <li>FedCitizen</li>
+    </weaponTags>
+  </Operation>
+
+  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+    <defName>Gun_Hin1k</defName>
+    <statBases>
+      <Mass>2.7</Mass>
+      <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+      <SightsEfficiency>1.0</SightsEfficiency>
+      <ShotSpread>0.1</ShotSpread>
+      <SwayFactor>1.5</SwayFactor>
+      <Bulk>1.0</Bulk>
+    </statBases>
+    <Properties>
+		<recoilAmount>0.20</recoilAmount>
+      <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Bullet_Hin1k</defaultProjectile>
+      <warmupTime>0.7</warmupTime>
+      <range>24</range>
+      <soundCast>ShotChargeRifle</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>10</muzzleFlashScale>
+	  <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+        <burstShotCount>1</burstShotCount>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+    </Properties>
+    <AmmoUser>
+      <magazineSize>12</magazineSize>
+      <reloadTime>4.25</reloadTime>
+      <ammoSet>AmmoSet_Hin1k</ammoSet>
+    </AmmoUser>
+    <FireModes>
+    	<aiAimMode>AimedShot</aiAimMode>
+    </FireModes>
+    <weaponTags>
+      <li>FedCitizen</li>
+    </weaponTags>
+  </Operation>
+  
+</Patch>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+    <defName>Gun_G56R</defName>
+    <statBases>
+      <Mass>4.8</Mass>
+      <RangedWeapon_Cooldown>1.96</RangedWeapon_Cooldown>
+      <SightsEfficiency>1.0</SightsEfficiency>
+      <ShotSpread>0.12</ShotSpread>
+      <SwayFactor>1.50</SwayFactor>
+      <Bulk>1.0</Bulk>
+    </statBases>
+    <Properties>
+		<recoilAmount>0.40</recoilAmount>
+      <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Bullet_G56R</defaultProjectile>
+      <warmupTime>2.4</warmupTime>
+      <range>24</range>
+      <soundCast>ShotChargeRifle</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>9</muzzleFlashScale>
+	  <ticksBetweenBurstShots>30</ticksBetweenBurstShots>
+        <burstShotCount>4</burstShotCount>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+    </Properties>
+    <AmmoUser>
+      <magazineSize>24</magazineSize>
+      <reloadTime>3.75</reloadTime>
+      <ammoSet>AmmoSet_G56R</ammoSet>
+    </AmmoUser>
+    <FireModes>
+      <aiUseBurstMode>TRUE</aiUseBurstMode>
+    </FireModes>
+    <weaponTags>
+      <li>Feds</li>
+    </weaponTags>
+  </Operation>
+
+  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+    <defName>Gun_G42R</defName>
+    <statBases>
+      <Mass>3.6</Mass>
+      <RangedWeapon_Cooldown>1.26</RangedWeapon_Cooldown>
+      <SightsEfficiency>1.0</SightsEfficiency>
+      <ShotSpread>0.1</ShotSpread>
+      <SwayFactor>1.5</SwayFactor>
+      <Bulk>1.0</Bulk>
+    </statBases>
+    <Properties>
+		<recoilAmount>0.20</recoilAmount>
+      <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Bullet_G42R</defaultProjectile>
+      <warmupTime>2.0</warmupTime>
+      <range>21</range>
+      <soundCast>ShotChargeRifle</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>10</muzzleFlashScale>
+	  <ticksBetweenBurstShots>20</ticksBetweenBurstShots>
+        <burstShotCount>5</burstShotCount>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+    </Properties>
+    <AmmoUser>
+      <magazineSize>30</magazineSize>
+      <reloadTime>4.25</reloadTime>
+      <ammoSet>AmmoSet_G42R</ammoSet>
+    </AmmoUser>
+    <FireModes>
+    	<aiAimMode>AimedShot</aiAimMode>
+    </FireModes>
+    <weaponTags>
+      <li>Feds</li>
+    </weaponTags>
+  </Operation>
+  
+</Patch>

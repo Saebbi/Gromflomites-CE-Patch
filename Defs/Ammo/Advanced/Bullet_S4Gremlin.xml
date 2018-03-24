@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+      <defName>AmmoS4Gremlin</defName>
+      <label>S4Gremlin</label>
+      <parent>AmmoAdvanced</parent>
+      <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
+    </ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_S4Gremlin</defName>
+    <label>S4Gremlin ammo</label>
+    <ammoTypes>
+      <Ammo_S4Gremlin>Bullet_S4Gremlin</Ammo_S4Gremlin>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+  <ThingDef Name="S4GremlinBase" ParentName="AmmoBase" Abstract="True">
+    <description>S4Gremlin ammo</description>
+    <statBases>
+	  <Mass>0.01</Mass>
+	  <Bulk>0.02</Bulk>
+    </statBases>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting</li>
+    </tradeTags>
+    <thingCategories>
+      <li>AmmoS4Gremlin</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="S4GremlinBase">
+    <defName>Ammo_S4Gremlin</defName>
+    <label>S4Gremlin cartridge</label>
+    <graphicData>
+      <texPath>Things/Ammo/Rifle/FMJ</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.95</MarketValue>
+    </statBases>
+    <ammoClass>Charged</ammoClass>
+  </ThingDef>
+	
+	<!-- ================== Projectiles ================== -->
+
+  <ThingDef Name="BaseS4Gremlin" ParentName="BaseBullet" Abstract="true">
+    <graphicData>
+      <texPath>Things/Projectiles/Laser_Red</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <speed>70</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseS4Gremlin">
+    <defName>Bullet_S4Gremlin</defName>
+    <label>S4Gremlin laser shot</label>
+    <projectile>
+      <damageAmountBase>26</damageAmountBase>
+      <armorPenetration>0.9</armorPenetration>
+    </projectile>
+  </ThingDef>
+	
+  <RecipeDef ParentName="ChargeAmmoRecipeBase">
+    <defName>MakeAmmo_S4Gremlin</defName>
+    <label>make S4Gremlin cartridge x50</label>
+    <description>Craft 50 S4Gremlin cartridges.</description>
+    <jobString>Making S4Gremlin cartridges.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Component</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Plasteel</li>
+        <li>Component</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_S4Gremlin>50</Ammo_S4Gremlin>
+    </products>
+  </RecipeDef>
+	
+</Defs>

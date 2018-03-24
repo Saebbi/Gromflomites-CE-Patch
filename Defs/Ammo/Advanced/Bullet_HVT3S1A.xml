@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+      <defName>AmmoHVT3S1A</defName>
+      <label>HVT3S1A</label>
+      <parent>AmmoAdvanced</parent>
+      <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
+    </ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_HVT3S1A</defName>
+    <label>HVT3S1A ammo</label>
+    <ammoTypes>
+      <Ammo_HVT3S1A>Bullet_HVT3S1A</Ammo_HVT3S1A>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+  <ThingDef Name="HVT3S1ABase" ParentName="AmmoBase" Abstract="True">
+    <description>HVT3S1A ammo</description>
+    <statBases>
+	  <Mass>0.01</Mass>
+	  <Bulk>0.02</Bulk>
+    </statBases>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting</li>
+    </tradeTags>
+    <thingCategories>
+      <li>AmmoHVT3S1A</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="HVT3S1ABase">
+    <defName>Ammo_HVT3S1A</defName>
+    <label>HVT3S1A cartridge</label>
+    <graphicData>
+      <texPath>Things/Ammo/RPG/HEAT</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>2</MarketValue>
+    </statBases>
+    <ammoClass>RocketHEAT</ammoClass>
+	<comps>
+      <li Class="CombatExtended.CompProperties_ExplosiveCE">
+        <explosionDamage>2</explosionDamage>
+        <explosionDamageDef>Electrical</explosionDamageDef>
+        <explosionRadius>1</explosionRadius>
+        <soundExplode>MortarBomb_Explode</soundExplode>
+      </li>
+    </comps>
+  </ThingDef>
+	
+	<!-- ================== Projectiles ================== -->
+
+  <ThingDef Name="BaseHVT3S1A" ParentName="BaseBullet" Abstract="true">
+    <graphicData>
+      <texPath>Things/Projectiles/Tesla</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Electrical</damageDef>
+	  <explosionRadius>1.0</explosionRadius>
+      <speed>80</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseHVT3S1A">
+    <defName>Bullet_HVT3S1A</defName>
+    <label>electric bolt</label>
+	<projectile>
+		<explosionRadius>1</explosionRadius>
+		<damageDef>Electrical</damageDef>
+		<damageAmountBase>2</damageAmountBase>
+	</projectile>
+  </ThingDef>
+	
+  <RecipeDef ParentName="ChargeAmmoRecipeBase">
+    <defName>MakeAmmo_HVT3S1A</defName>
+    <label>make HVT3S1A cartridge x100</label>
+    <description>Craft 100 HVT3S1A cartridges.</description>
+    <jobString>Making HVT3S1A cartridges.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Component</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Plasteel</li>
+        <li>Component</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_HVT3S1A>100</Ammo_HVT3S1A>
+    </products>
+  </RecipeDef>
+	
+</Defs>

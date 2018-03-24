@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+      <defName>AmmoKEL096A</defName>
+      <label>KEL096A</label>
+      <parent>AmmoAdvanced</parent>
+      <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
+    </ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_KEL096A</defName>
+    <label>KEL096A ammo</label>
+    <ammoTypes>
+      <Ammo_KEL096A>Bullet_KEL096A</Ammo_KEL096A>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+  <ThingDef Name="KEL096ABase" ParentName="AmmoBase" Abstract="True">
+    <description>KEL096A ammo</description>
+    <statBases>
+	  <Mass>0.01</Mass>
+	  <Bulk>0.02</Bulk>
+    </statBases>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting</li>
+    </tradeTags>
+    <thingCategories>
+      <li>AmmoKEL096A</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="KEL096ABase">
+    <defName>Ammo_KEL096A</defName>
+    <label>KEL096A cartridge</label>
+    <graphicData>
+      <texPath>Things/Ammo/RPG/HEAT</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>2</MarketValue>
+    </statBases>
+    <ammoClass>RocketHEAT</ammoClass>
+	<comps>
+      <li Class="CombatExtended.CompProperties_ExplosiveCE">
+        <explosionDamage>24</explosionDamage>
+        <explosionDamageDef>Bomb</explosionDamageDef>
+        <explosionRadius>2</explosionRadius>
+        <soundExplode>MortarBomb_Explode</soundExplode>
+      </li>
+    </comps>
+  </ThingDef>
+	
+	<!-- ================== Projectiles ================== -->
+
+  <ThingDef Name="BaseKEL096A" ParentName="BaseBullet" Abstract="true">
+    <graphicData>
+      <texPath>Things/Projectiles/Laser_Red</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <speed>70</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseKEL096A">
+    <defName>Bullet_KEL096A</defName>
+    <label>laser shot</label>
+	<projectile>
+		<explosionRadius>2</explosionRadius>
+		<damageDef>Bomb</damageDef>
+		<damageAmountBase>24</damageAmountBase>
+	</projectile>
+  </ThingDef>
+	
+  <RecipeDef ParentName="ChargeAmmoRecipeBase">
+    <defName>MakeAmmo_KEL096A</defName>
+    <label>make KEL096A cartridge x10</label>
+    <description>Craft 10 KEL096A cartridges.</description>
+    <jobString>Making KEL096A cartridges.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Component</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Plasteel</li>
+        <li>Component</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_KEL096A>10</Ammo_KEL096A>
+    </products>
+  </RecipeDef>
+	
+</Defs>

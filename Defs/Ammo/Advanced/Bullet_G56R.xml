@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+      <defName>AmmoG56R</defName>
+      <label>G56R</label>
+      <parent>AmmoAdvanced</parent>
+      <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
+    </ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_G56R</defName>
+    <label>G56R ammo</label>
+    <ammoTypes>
+      <Ammo_G56R>Bullet_G56R</Ammo_G56R>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+  <ThingDef Name="G56RBase" ParentName="AmmoBase" Abstract="True">
+    <description>G56R ammo</description>
+    <statBases>
+	  <Mass>0.01</Mass>
+	  <Bulk>0.02</Bulk>
+    </statBases>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting</li>
+    </tradeTags>
+    <thingCategories>
+      <li>AmmoG56R</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="G56RBase">
+    <defName>Ammo_G56R</defName>
+    <label>G56R cartridge</label>
+    <graphicData>
+      <texPath>Things/Ammo/Rifle/FMJ</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.95</MarketValue>
+    </statBases>
+    <ammoClass>Charged</ammoClass>
+  </ThingDef>
+	
+	<!-- ================== Projectiles ================== -->
+
+  <ThingDef Name="BaseG56R" ParentName="BaseBullet" Abstract="true">
+    <graphicData>
+      <texPath>Things/Projectiles/Laser_Red</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <speed>70</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseG56R">
+    <defName>Bullet_G56R</defName>
+    <label>charge shot</label>
+    <projectile>
+      <damageAmountBase>14</damageAmountBase>
+      <armorPenetration>0.7</armorPenetration>
+    </projectile>
+  </ThingDef>
+	
+  <RecipeDef ParentName="ChargeAmmoRecipeBase">
+    <defName>MakeAmmo_G56R</defName>
+    <label>make G56R cartridge x100</label>
+    <description>Craft 100 G56R cartridges.</description>
+    <jobString>Making G56R cartridges.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Component</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Plasteel</li>
+        <li>Component</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_G56R>100</Ammo_G56R>
+    </products>
+  </RecipeDef>
+	
+</Defs>
