@@ -41,4 +41,31 @@
     </weaponTags>
   </Operation>
 
+  <Operation Class="PatchOperationReplace">
+	<xpath>*/ThingDef[defName="Gun_S4Gremlin"]/tools</xpath>
+	<value>
+		<tools>
+			<li Class="CombatExtended.ToolCE">
+				<label>grip</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>7</power>
+				<cooldownTime>1.8</cooldownTime>
+				<armorPenetration>0.1</armorPenetration>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>7</power>
+				<cooldownTime>1.9</cooldownTime>
+				<armorPenetration>0.1</armorPenetration>
+			</li>
+		</tools>
+	</value>	
+  </Operation>
+  
 </Patch>

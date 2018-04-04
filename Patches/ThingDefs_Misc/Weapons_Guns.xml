@@ -40,6 +40,33 @@
     </weaponTags>
   </Operation>
 
+  <Operation Class="PatchOperationReplace">
+	<xpath>*/ThingDef[defName="Gun_G56R"]/tools</xpath>
+	<value>
+		<tools>
+			<li Class="CombatExtended.ToolCE">
+				<label>grip</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>7</power>
+				<cooldownTime>1.8</cooldownTime>
+				<armorPenetration>0.1</armorPenetration>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>23</power>
+				<cooldownTime>1.9</cooldownTime>
+				<armorPenetration>0.1</armorPenetration>
+			</li>
+		</tools>
+	</value>	
+  </Operation>
+  
   <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
     <defName>Gun_G42R</defName>
     <statBases>
@@ -77,6 +104,33 @@
     <weaponTags>
       <li>Feds</li>
     </weaponTags>
+  </Operation>
+  
+  <Operation Class="PatchOperationReplace">
+	<xpath>*/ThingDef[defName="Gun_G42R"]/tools</xpath>
+	<value>
+		<tools>
+			<li Class="CombatExtended.ToolCE">
+				<label>grip</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>5</power>
+				<cooldownTime>1.8</cooldownTime>
+				<armorPenetration>0.1</armorPenetration>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>17</power>
+				<cooldownTime>1.9</cooldownTime>
+				<armorPenetration>0.1</armorPenetration>
+			</li>
+		</tools>
+	</value>	
   </Operation>
   
 </Patch>
